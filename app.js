@@ -20,14 +20,13 @@ const controll = data => {
             filteredArray.push(str)
         }
     }
-
+   
     mergeJSON(data, filteredArray)
 }
 
 const mergeJSON = (arrayJSON, transferData) => {
 
     const resourse = arrayJSON.map((e, i) => {
-        let o
         for (let keys in e[i]) {
             e[keys] = e[keys]
         }
