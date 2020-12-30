@@ -8,27 +8,44 @@ const data = [store_1, store_2, store_3]
 
 let file = []
 
-const recoder = (source, fields) => {
-    for (let i = 0; i < source.length; i++) {
-        const csv = JSONtoCSV(source[0], { fields: fields })
-        const writer = fs.createWriteStream('./sample.csv')
-        writer.write(csv, err => {
-            if (err) {
-                console.log('Error')
-            }
-            console.log('Success')
-        })
-    }
-}
-
 const controll = data => {
     let array = []
+    let filteredArray = []
     data.map((e, i) => {
         file.push(Object.keys(e))
-        array = array.concat(file[i])
+        array = array.concat(...file[i])
+    })
+    for (let str of array) {
+        if (!filteredArray.includes(str)) {
+            filteredArray.push(str)
+        }
+    }
+
+    mergeJSON(data, filteredArray)
+}
+
+const mergeJSON = (arrayJSON, transferData) => {
+
+    const resourse = arrayJSON.map((e, i) => {
+        let o
+        for (let keys in e[i]) {
+            e[keys] = e[keys]
+        }
+        return e
     })
 
-    recoder(data, array)
+    recoder(resourse, transferData)
+}
+
+const recoder = (source, fields) => {
+    const csv = JSONtoCSV(source[0], { fields: fields })
+    const writer = fs.createWriteStream('./sample.csv')
+    writer.write(csv, err => {
+        if (err) {
+            console.log('Error')
+        }
+        console.log('Success')
+    })
 }
 
 controll(data)
