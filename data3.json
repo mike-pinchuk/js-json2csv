@@ -1,0 +1,132 @@
+{
+    "consent": [
+        {
+            "id": "XYZZZZZZ",
+            "content": "",
+            "details": "We're here to help you organize <strong>your knowledge</strong> about your family into a format that your doctor can work with. We also cross-reference publicly-available cancer <a target=\"_blank\" href=\"https://itrunsinmyfamily.com/guidelines\">guidelines</a>, but this information is for your doctor, and only your doctor can determine your personal risk of cancer.",
+            "summary": "We are not able to provide medical advice or a diagnosis.",
+            "consented": true
+        },
+        {
+            "id": "AAAAAAAAA",
+            "content": "",
+            "details": "We're trying hard to defend your data, your privacy, and your rights. We place a lot of effort on protecting <strong>your</strong> data and privacy, and do our best to comply with all major data protection laws, including <a target=\"_blank\" href=\"https://www.hhs.gov/hipaa/index.html\">HIPAA</a>, the <a target=\"_blank\" href=\"https://eugdpr.org/\">GDPR</a>, and the <a target=\"_blank\" href=\"https://www.caprivacy.org/\">CCPA</a>.<br/><br/>We will <strong>never</strong> share your personally identifiable data with 3rd-parties, and we will purge any record of you from our servers at your request.",
+            "summary": "We collect data about you as part of this service, but you have data and privacy rights that we sincerely defend and respect.",
+            "consented": true
+        },
+        {
+            "id": "AAAAAAAAA",
+            "content": "",
+            "details": "This is a summary of our much more detailed <a target=\"_blank\" href=\"https://itrunsinmyfamily.com/privacy-policy/\">Privacy Policy</a> and <a target=\"_blank\" href=\"https://itrunsinmyfamily.com/terms-conditions/\">Terms &amp; Conditions</a>. We encourage you to read those documents to fully understand our role in your health and the efforts we go through to protect your data and privacy rights.",
+            "summary": "This is an overview, and there's more you can read.",
+            "consented": true
+        }
+    ],
+    "proband": {
+        "age": 80,
+        "email": "XYZ.ABC@PQR.com",
+        "gender": "male",
+        "traits": {
+            "ancestry": [
+                "america",
+                "europe"
+            ],
+            "bodyWeight": 200
+        },
+        "hadTest": true,
+        "proband": true,
+        "fullName": "Me",
+        "pedigree": {
+            "sons": 3,
+            "sisters": 4,
+            "brothers": 1,
+            "daughters": 1,
+            "maternalAunts": 0,
+            "paternalAunts": 0,
+            "maternalUncles": 0,
+            "paternalUncles": 0
+        },
+        "hadCancer": true,
+        "lifestyle": {
+            "tobacco": {
+                "hasSmoked": false,
+                "usesChewOrDip": false
+            },
+            "zipcode": "92801",
+            "regularAspirin": false,
+            "regularIbuprofen": false,
+            "drinkingFrequency": "never"
+        },
+        "relatives": [
+            {
+                "age": 60,
+                "gender": "male",
+                "hadTest": false,
+                "proband": false,
+                "deceased": false,
+                "fullName": "Him",
+                "relation": "SON",
+                "conditions": [
+                    {
+                        "code": "C93",
+                        "name": "Acute lymphoblastic (ALL)",
+                        "ageOfDiagnosis": 50
+                    },
+                    {
+                        "code": "C14",
+                        "name": "Kidney cancer",
+                        "histology": null,
+                        "ageOfDiagnosis": 50,
+                        "cancerLocation": null
+                    }
+                ]
+            },
+            {
+                "gender": "male",
+                "hadTest": false,
+                "proband": false,
+                "deceased": true,
+                "fullName": "Dad",
+                "relation": "FTH",
+                "ageOfDeath": 78,
+                "conditions": [
+                    {
+                        "code": "C22",
+                        "name": "Prostate cancer",
+                        "gleasonScore": 10,
+                        "ageOfDiagnosis": 55
+                    }
+                ]
+            },
+            {
+                "gender": "female",
+                "hadTest": false,
+                "proband": false,
+                "deceased": true,
+                "fullName": "Mom",
+                "relation": "MTH",
+                "ageOfDeath": 76,
+                "conditions": [
+                    {
+                        "code": "C20",
+                        "name": "Pancreatic cancer",
+                        "ageOfDiagnosis": 75
+                    }
+                ]
+            }
+        ],
+        "colorectal": {
+            "hadColonoscopy": false
+        },
+        "conditions": [
+            {
+                "code": "C22",
+                "name": "Prostate cancer",
+                "gleasonScore": 10,
+                "ageOfDiagnosis": 52
+            }
+        ],
+        "geneTestResult": "Negative",
+        "familyCancerHistory": false
+    }
+}
