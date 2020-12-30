@@ -11,8 +11,8 @@ let file = []
 const controll = data => {
     let array = []
     let filteredArray = []
-    data.map((e, i) => {
-        file.push(Object.keys(e))
+    data.map((elem, i) => {
+        file.push(Object.keys(elem))
         array = array.concat(...file[i])
     })
     for (let str of array) {
@@ -26,14 +26,14 @@ const controll = data => {
 
 const mergeJSON = (arrayJSON, transferData) => {
 
-    const resourse = arrayJSON.map((e, i) => {
-        for (let keys in e[i]) {
-            if (e[transferData] !== e[keys]) {
-                e[keys] = e[keys]
+    const resourse = arrayJSON.map((elem, i) => {
+        for (let keys in elem[i]) {
+            if (elem[transferData] !== elem[keys]) {
+                elem[keys] = elem[keys]
             }
         }
-        return e
-       
+        return elem
+
     })
 
     recoder(resourse, transferData)

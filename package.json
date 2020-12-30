@@ -1,4 +1,13 @@
 {
+  "name": "convector",
+  "version": "1.0.0",
+  "main": "app.js",
+  "engines": {
+    "node": ">=15.4.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "json2csv": "^5.0.5"
   }
