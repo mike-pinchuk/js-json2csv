@@ -20,7 +20,7 @@ const controll = data => {
             filteredArray.push(str)
         }
     }
-   
+
     mergeJSON(data, filteredArray)
 }
 
@@ -28,16 +28,19 @@ const mergeJSON = (arrayJSON, transferData) => {
 
     const resourse = arrayJSON.map((e, i) => {
         for (let keys in e[i]) {
-            e[keys] = e[keys]
+            if (e[transferData] !== e[keys]) {
+                e[keys] = e[keys]
+            }
         }
         return e
+       
     })
 
     recoder(resourse, transferData)
 }
 
 const recoder = (source, fields) => {
-    const csv = JSONtoCSV(source[0], { fields: fields })
+    const csv = JSONtoCSV(source, { fields: fields })
     const writer = fs.createWriteStream('./sample.csv')
     writer.write(csv, err => {
         if (err) {
