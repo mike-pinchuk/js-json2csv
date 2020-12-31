@@ -6,11 +6,11 @@ import store_3 from '../data3.json'
 
 const data: Array<object> = [store_1, store_2, store_3]
 
-let file: Array<string[]> = []
+const file: Array<string[]> = []
 
 const controll = (data: Array<object>) => {
-    let array: Array<string> = []
-    let filteredArray: Array<string> = []
+    const array: Array<string> = []
+    const filteredArray: Array<string> = []
 
     data.map((elem, i) => {
         file.push(Object.keys(elem))
@@ -26,7 +26,7 @@ const controll = (data: Array<object>) => {
     mergeJSON(data, filteredArray)
 }
 
-const mergeJSON = (arrayJSON: Array<any>, transferData: any) => {
+const mergeJSON = (arrayJSON: Array<any>, transferData: Array<string>) => {
     const resourse: Object = arrayJSON.map((elem, i) => {
         for (let keys in elem[i]) {
             if (elem[transferData] !== elem[keys]) {
@@ -50,4 +50,4 @@ const recorder = (sourse: Object, fields: Array<string>) => {
     })
 }
 
-console.log(data)
+controll(data)
