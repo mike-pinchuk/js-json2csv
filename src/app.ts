@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import * as JSONtoCSV from 'json2csv'
+import { parse } from 'json2csv'
 import store_1 from '../data1.json'
 import store_2 from '../data2.json'
 import store_3 from '../data3.json'
@@ -42,7 +42,7 @@ const mergeJSON = (arrayJSON: Array<any>, transferData: Array<any>) => {
 }
 
 const recorder = (sourse: Object, fields: Array<any>) => {
-    const csv: Object = JSONtoCSV.parse(sourse, { fields: fields })
+    const csv: Object = parse(sourse, { fields: fields })
     const writer = fs.createWriteStream('./sample.csv')
     writer.write(csv, err => {
         if (err) {
