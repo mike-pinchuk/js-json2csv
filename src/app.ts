@@ -9,7 +9,7 @@ const data: Array<object> = [store_1, store_2, store_3]
 const file: Array<string[]> = []
 
 const controll = (data: Array<object>) => {
-    const array: Array<string> = []
+    let array: Array<string> = []
     const filteredArray: Array<string> = []
 
     data.map((elem, i) => {
