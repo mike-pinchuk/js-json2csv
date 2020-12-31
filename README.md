@@ -1,10 +1,11 @@
-# Name
+# Converter .json to .csv
 
-description
+This is a small app, which allow to user convert JSON files to .csv format
 
 ### Pre-development
 
-steps
+npm i
+npm run start:dev
 
 ### Development
 

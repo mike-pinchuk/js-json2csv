@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import fs from 'fs'
 import { parse } from 'json2csv'
 import store_1 from '../data1.json'
 import store_2 from '../data2.json'
@@ -26,7 +26,7 @@ const controll = (data: Array<object>) => {
     mergeJSON(data, filteredArray)
 }
 
-const mergeJSON = (arrayJSON: Array<any>, transferData: string) => {
+const mergeJSON = (arrayJSON: Array<any>, transferData: any) => {
     const resourse: Object = arrayJSON.map((elem, i) => {
         for (let keys in elem[i]) {
             if (elem[transferData] !== elem[keys]) {
