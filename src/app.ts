@@ -4,17 +4,18 @@ import store_1 from '../data1.json'
 import store_2 from '../data2.json'
 import store_3 from '../data3.json'
 
-const data: Array<object> = [store_1, store_2, store_3]
+const controll = () => {
+    const storage: Array<object> = [store_1, store_2, store_3]
 
-const file: Array<string[]> = []
+    filteredUniqueName(storage)
+}
 
-const controll = (data: Array<object>) => {
+const filteredUniqueName = (data: Array<object>) => {
     let array: Array<string> = []
     const filteredArray: Array<string> = []
-
-    data.map((elem, i) => {
-        file.push(Object.keys(elem))
-        array = array.concat(...file[i])
+    
+    data.forEach(elem => {
+        array = array.concat(...Object.keys(elem))
     })
 
     for (let str of array) {
@@ -23,26 +24,18 @@ const controll = (data: Array<object>) => {
         }
     }
 
-    mergeJSON(data, filteredArray)
+    convert2csv(data, filteredArray)
 }
 
-const mergeJSON = (arrayJSON: Array<object>, transferData: Array<string>) => {
-    const resourse: Object = arrayJSON.map((elem, i) => {
-        for (let keys in elem[i]) {
-            if (elem[transferData.toString()] !== elem[keys]) {
-                elem[keys] = elem[keys]
-            }
-        }
-        return elem
-    })
-
-    recorder(resourse, transferData)
-}
-
-const recorder = (sourse: Object, fields: Array<string>) => {
+const convert2csv = (sourse: Array<object>, fields: Array<string>) => {
     const csv: Object = parse(sourse, { fields: fields })
+
+    recorder(csv)
+}
+
+const recorder = (sourse: Object) => {
     const writer = fs.createWriteStream('./sample.csv')
-    writer.write(csv, err => {
+    writer.write(sourse, err => {
         if (err) {
             console.log('Error')
         }
@@ -50,4 +43,4 @@ const recorder = (sourse: Object, fields: Array<string>) => {
     })
 }
 
-controll(data)
+controll()
