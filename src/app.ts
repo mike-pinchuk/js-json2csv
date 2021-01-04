@@ -26,7 +26,7 @@ const controll = (data: Array<object>) => {
     mergeJSON(data, filteredArray)
 }
 
-const mergeJSON = (arrayJSON: Array<any>, transferData: Array<string>) => {
+const mergeJSON = (arrayJSON: Array<object>, transferData: Array<string>) => {
     const resourse: Object = arrayJSON.map((elem, i) => {
         for (let keys in elem[i]) {
             if (elem[transferData.toString()] !== elem[keys]) {
