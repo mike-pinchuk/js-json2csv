@@ -17,7 +17,7 @@ const controll = (data: Array<object>) => {
         array = array.concat(...file[i])
     })
 
-    for (let str in array) {
+    for (let str of array) {
         if (!filteredArray.includes(str)) {
             filteredArray.push(str)
         }
@@ -29,7 +29,7 @@ const controll = (data: Array<object>) => {
 const mergeJSON = (arrayJSON: Array<any>, transferData: Array<string>) => {
     const resourse: Object = arrayJSON.map((elem, i) => {
         for (let keys in elem[i]) {
-            if (elem[transferData] !== elem[keys]) {
+            if (elem[transferData.toString()] !== elem[keys]) {
                 elem[keys] = elem[keys]
             }
         }
