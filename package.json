@@ -1,7 +1,7 @@
 {
   "name": "convector",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "app.ts",
   "engines": {
     "node": ">=15.4.0"
   },

@@ -4,16 +4,18 @@ import store_1 from '../data1.json'
 import store_2 from '../data2.json'
 import store_3 from '../data3.json'
 
-const controll = () => {
-    const storage: Array<object> = [store_1, store_2, store_3]
+const storage: Array<object> = [store_1, store_2, store_3]
 
-    filteredUniqueName(storage)
+const controll = (data: Array<object>) => {
+    const fields = filteredUniqueName(data)
+    const csv = convert2csv(data, fields)
+    recorder(csv)
 }
 
 const filteredUniqueName = (data: Array<object>) => {
     let array: Array<string> = []
     const filteredArray: Array<string> = []
-    
+
     data.forEach(elem => {
         array = array.concat(...Object.keys(elem))
     })
@@ -24,16 +26,16 @@ const filteredUniqueName = (data: Array<object>) => {
         }
     }
 
-    convert2csv(data, filteredArray)
+    return filteredArray
 }
 
 const convert2csv = (sourse: Array<object>, fields: Array<string>) => {
     const csv: Object = parse(sourse, { fields: fields })
 
-    recorder(csv)
+    return csv
 }
 
-const recorder = (sourse: Object) => {
+const recorder = (sourse: Object): void => {
     const writer = fs.createWriteStream('./sample.csv')
     writer.write(sourse, err => {
         if (err) {
@@ -43,4 +45,4 @@ const recorder = (sourse: Object) => {
     })
 }
 
-controll()
+controll(storage)
