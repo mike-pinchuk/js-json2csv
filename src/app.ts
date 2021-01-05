@@ -1,5 +1,5 @@
 import express from 'express'
-import router from './controllers/api/index'
+import router from './routes/index'
 
 const PORT = process.env.PORT || 3000
 
