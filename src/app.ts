@@ -6,10 +6,10 @@ import store_3 from '../data3.json'
 
 const storage: Array<object> = [store_1, store_2, store_3]
 
-const controll = (data: Array<object>) => {
+const controll = (data: Array<object>): void => {
     const fields = filteredUniqueName(data)
     const csv = convert2csv(data, fields)
-    recorder(csv, 'example')
+    recorder(csv, 'example.csv')
 }
 
 const filteredUniqueName = (data: Array<object>) => {
@@ -36,7 +36,7 @@ const convert2csv = (sourse: Array<object>, fields: Array<string>) => {
 }
 
 const recorder = (sourse: Object, name: string): void => {
-    const writer = fs.createWriteStream(`./${name}.csv`)
+    const writer = fs.createWriteStream(name)
     writer.write(sourse, err => {
         if (err) {
             console.log('Error')
