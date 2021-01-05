@@ -9,7 +9,7 @@ const storage: Array<object> = [store_1, store_2, store_3]
 const controll = (data: Array<object>) => {
     const fields = filteredUniqueName(data)
     const csv = convert2csv(data, fields)
-    recorder(csv)
+    recorder(csv, 'example')
 }
 
 const filteredUniqueName = (data: Array<object>) => {
@@ -35,8 +35,8 @@ const convert2csv = (sourse: Array<object>, fields: Array<string>) => {
     return csv
 }
 
-const recorder = (sourse: Object): void => {
-    const writer = fs.createWriteStream('./sample.csv')
+const recorder = (sourse: Object, name: string): void => {
+    const writer = fs.createWriteStream(`./${name}.csv`)
     writer.write(sourse, err => {
         if (err) {
             console.log('Error')
